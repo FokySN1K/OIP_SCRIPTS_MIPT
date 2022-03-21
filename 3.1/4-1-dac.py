@@ -35,7 +35,7 @@ try:
                 print("Ошибка: введено число, несоответствующее заданным условиям")
                 continue
 finally:
-    time.sleep(1)
+    time.sleep(6)
     GPIO.output(dac, 0)
     GPIO.cleanup()
 
