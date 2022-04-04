@@ -31,6 +31,7 @@ def adc():
     #voltage = value / levels * maxVoltage
     while right - value != 1:
         signal = num2dac(value)
+        time.sleep(0.001)
         compValue = GPIO.input(comp)
         if compValue:
             left = value
@@ -43,7 +44,6 @@ def adc():
 try:
     while True:
         adc()
-        time.sleep(0.001)
 
 
 finally:
