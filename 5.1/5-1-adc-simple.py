@@ -40,6 +40,6 @@ try:
         adc()
 
 finally:
-    time.sleep(10)
+    time.sleep(3)
     GPIO.output(dac, 0)
     GPIO.cleanup()
