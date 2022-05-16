@@ -9,7 +9,7 @@ comp = 4
 troyka = 17
 Vref = 3.3
 bdepth = 8 #хардкод разрядности
-
+time_massiv = []
 
 gpio.setmode( gpio.BCM )
 
@@ -58,7 +58,7 @@ try:
 
 
         data = data + [ decVfind ]
-
+        time_massiv.append(time.time() - start_time)
         if decVfind >= 0.97 * ( 2 ** bdepth ):
             gpio.output( troyka, 0 )
             phase1_passed = True
@@ -71,7 +71,7 @@ try:
 
     print('duration = {} s'.format( duration ))
 
-    mplot.plot( data )
+    mplot.plot( time_massiv, data)
 
     data_str = "\n".join( [ str( item ) for item in data ] )
     with open( "data.txt", "w" ) as datafile:
