@@ -1,0 +1,2 @@
+samplerate=90.50665572067048
+quantization=0.012890625
